@@ -81,7 +81,7 @@ $_db_name = ($v = getenv('MYSQL_DATABASE')) !== false ? $v : 'jorani';
 $db['default'] = array(
     'dsn'      => '',
     'hostname' => getenv('MYSQL_HOST') ?: 'planmyleave.mysql.database.azure.com',
-    'username' => getenv('MYSQL_USER') ?: 'shammoud@planmyleave'',
+    'username' => getenv('MYSQL_USER') ?: 'shammoud@planmyleave',
     'password' => getenv('MYSQL_PASSWORD') ?: 'K@miiddqd12',
     'database' => getenv('MYSQL_DATABASE') ?: 'planmyleave_test',
     'dbdriver' => 'pdo',
@@ -97,6 +97,5 @@ $db['default'] = array(
     'compress' => FALSE,
     'stricton' => FALSE,
     'failover' => array(),
-    'save_queries' => TRUE,
-    'options' => $options
+    'save_queries' => TRUE
 );
