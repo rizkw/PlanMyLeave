@@ -85,6 +85,7 @@ $db['default'] = array(
     'password' => getenv('MYSQL_PASSWORD') ?: 'K@miiddqd12',
     'database' => getenv('MYSQL_DATABASE') ?: 'planmyleave_test',
     'dbdriver' => 'pdo',
+    'subdriver' => 'mysql',
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
