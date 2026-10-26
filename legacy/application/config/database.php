@@ -81,7 +81,7 @@ $_db_name = ($v = getenv('MYSQL_DATABASE')) !== false ? $v : 'jorani';
 $db['default'] = array(
     'dsn'      => '',
     'hostname' => getenv('MYSQL_HOST') ?: 'pml.mysql.database.azure.com',
-    'username' => getenv('MYSQL_USER') ?: 'pml@pml',
+    'username' => getenv('MYSQL_USER') ?: 'pml',
     'password' => getenv('MYSQL_PASSWORD') ?: 'Zoya2020?',
     'database' => getenv('MYSQL_DATABASE') ?: 'pml',
     'dbdriver' => 'pdo',
