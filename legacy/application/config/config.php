@@ -345,7 +345,7 @@ $config['encryption_key'] = $env_str('ENC_KEY', 'YJ9FljXV4axG7QTzEzbRaUBFwi0FzIl
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_cookie_name'] = 'jorani_session';
+$config['sess_cookie_name'] = 'pml_session';
 $config['sess_driver'] = 'database';
 $config['sess_save_path'] = 'ci_sessions';
 $config['sess_regenerate_destroy'] = FALSE;
@@ -403,8 +403,8 @@ if (isset($_SERVER["REQUEST_URI"])) {
 } else {
     $config['csrf_protection'] = TRUE;
 }
-$config['csrf_token_name'] = 'csrf_test_jorani';
-$config['csrf_cookie_name'] = 'csrf_cookie_jorani';
+$config['csrf_token_name'] = 'csrf_test_pml';
+$config['csrf_cookie_name'] = 'csrf_cookie_pml';
 $config['csrf_expire'] = 7200;
 
 /*
@@ -478,9 +478,9 @@ $config['proxy_ips'] = '';
 
 //____________________________________________________________________________
 //default email from
-$config['from_mail'] = $env_str('FROM_MAIL', 'do.not@reply.me');
-$config['from_name'] = $env_str('FROM_NAME', 'Jorani');
-$config['subject_prefix'] = $env_str('SUBJECT_PREFIX', '[Jorani] ');
+$config['from_mail'] = $env_str('FROM_MAIL', 'pml@mena.vml.com');
+$config['from_name'] = $env_str('FROM_NAME', 'Plan My Leave');
+$config['subject_prefix'] = $env_str('SUBJECT_PREFIX', '[PML] ');
 
 //____________________________________________________________________________
 //User management
@@ -582,7 +582,7 @@ $config['saml_enabled'] = $env_bool('SAML_ENABLED', false);
 //____________________________________________________________________________
 //Enable public ICS feeds (global calendar, contract, personal information)
 $config['ics_enabled'] = $env_bool('ICS_ENABLED', true);
-$config['default_timezone'] = $env_str('DEFAULT_TIMEZONE', 'Europe/Paris');
+$config['default_timezone'] = $env_str('DEFAULT_TIMEZONE', 'Asia/Beirut');
 $config['legacy_feeds'] = $env_bool('LEGACY_FEEDS', false); // TRUE to maintain the unsecure URLs for ICS feeds
 
 //____________________________________________________________________________
