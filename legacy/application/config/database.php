@@ -70,32 +70,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 $active_group = 'default';
 $query_builder = TRUE;
 
-$_db_host = ($v = getenv('MYSQL_HOST')) !== false ? $v : '127.0.0.1';
-$_db_user = ($v = getenv('MYSQL_USER')) !== false ? $v : 'jorani';
-$_db_pass = ($v = getenv('MYSQL_PASSWORD')) !== false ? $v : 'jorani';
-$_db_name = ($v = getenv('MYSQL_DATABASE')) !== false ? $v : 'jorani';
+// FORCED: Overrode global assignments to prevent Azure environment mapping collisions
+$_db_host = 'pml.mysql.database.azure.com';
+$_db_user = 'pml';
+$_db_pass = 'Zoya2020?';
+$_db_name = 'pml';
 
 $db['default'] = array(
-    // FIXED: Corrected full Azure hostname inside the Data Source Name string
-    'dsn'      => 'mysql:host=://azure.com;dbname=pml;charset=utf8mb4',
-    'hostname' => getenv('MYSQL_HOST') ?: '://azure.com',
-    'username' => getenv('MYSQL_USER') ?: 'pml',
-    'password' => getenv('MYSQL_PASSWORD') ?: 'Zoya2020?',
-    'database' => getenv('MYSQL_DATABASE') ?: 'pml',
-    'dbdriver' => 'pdo',
+    'dsn'      => '',
+    'hostname' => 'pml.mysql.database.azure.com', // FORCED: Directly set to your Azure database instance
+    'username' => 'pml',
+    'password' => 'Zoya2020?',
+    'database' => 'pml',
+    'dbdriver' => 'pdo',                          // Kept standard PDO layer for environment compatibility
     'subdriver' => 'mysql',
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
     'cache_on' => FALSE,
     'cachedir' => '',
-    'char_set' => 'utf8mb4',        
-    'dbcollat' => 'utf8mb4_unicode_ci', 
+    'char_set' => 'utf8mb4',                      // Enforced exact database layout character mapping
+    'dbcollat' => 'utf8mb4_unicode_ci',           // Enforced exact database layout collation mapping
     'swap_pre' => '',
-    'encrypt' => TRUE,             
+    'encrypt' => TRUE,                             // Enforced standard Azure connection security validation
     'compress' => FALSE,
     'stricton' => FALSE,
     'failover' => array(),
