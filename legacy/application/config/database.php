@@ -79,7 +79,7 @@ $_db_pass = ($v = getenv('MYSQL_PASSWORD')) !== false ? $v : 'jorani';
 $_db_name = ($v = getenv('MYSQL_DATABASE')) !== false ? $v : 'jorani';
 
 $db['default'] = array(
-    // FIXED: Ensured the host points exactly to your Azure instance
+    // FIXED: Corrected full Azure hostname inside the Data Source Name string
     'dsn'      => 'mysql:host=://azure.com;dbname=pml;charset=utf8mb4',
     'hostname' => getenv('MYSQL_HOST') ?: '://azure.com',
     'username' => getenv('MYSQL_USER') ?: 'pml',
@@ -101,5 +101,3 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
-
-
