@@ -496,7 +496,7 @@ $config['login_pattern'] = $env_str('LOGIN_PATTERN', 'jdoe');           // (defa
 //____________________________________________________________________________
 //Set this value to TRUE if you want to create leaves at status requested instead of planned
 $config['leave_status_requested'] = $env_bool('LEAVE_STATUS_REQUESTED', false);
-$config['default_leave_type'] = $env_bool('DEFAULT_LEAVE_TYPE', 0);    // Default leave type identifier (integer).
+$config['default_leave_type'] = $env_bool('DEFAULT_LEAVE_TYPE', 6);    // Default leave type identifier (integer).
 
 // Create a leave request / Allow overwrite of the duration
 $config['disable_edit_leave_duration'] = $env_bool('DISABLE_EDIT_LEAVE_DURATION', false); // Switch to read-only (duration is computed)
