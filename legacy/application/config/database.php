@@ -79,12 +79,14 @@ $_db_pass = ($v = getenv('MYSQL_PASSWORD')) !== false ? $v : 'jorani';
 $_db_name = ($v = getenv('MYSQL_DATABASE')) !== false ? $v : 'jorani';
 
 $db['default'] = array(
-    'dsn'      => '',
-    'hostname' => getenv('MYSQL_HOST') ?: 'pml.mysql.database.azure.com',
+    // FIXED: Formatted the DSN manually to enforce PHP 8 + utf8mb4 parameters on Azure
+    'dsn'      => 'mysql:host=://azure.com;dbname=pml;charset=utf8mb4',
+    'hostname' => getenv('MYSQL_HOST') ?: '://azure.com',
     'username' => getenv('MYSQL_USER') ?: 'pml',
     'password' => getenv('MYSQL_PASSWORD') ?: 'Zoya2020?',
     'database' => getenv('MYSQL_DATABASE') ?: 'pml',
-    'dbdriver' => 'mysqli',        // FIXED: Changed to native mysqli driver for PHP 8 compatibility
+    'dbdriver' => 'pdo',            // Restored PDO for Azure environment compatibility
+    'subdriver' => 'mysql',
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
@@ -93,7 +95,7 @@ $db['default'] = array(
     'char_set' => 'utf8mb4',        // FIXED: Matched your database utf8mb4 schema
     'dbcollat' => 'utf8mb4_unicode_ci', // FIXED: Matched your database collation schema
     'swap_pre' => '',
-    'encrypt' => TRUE,             // FIXED: Enabled encryption for Azure MySQL requirements
+    'encrypt' => TRUE,             // Enforces SSL verification on Azure MySQL instances
     'compress' => FALSE,
     'stricton' => FALSE,
     'failover' => array(),
