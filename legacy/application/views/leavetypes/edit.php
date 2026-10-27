@@ -7,6 +7,7 @@
  * @since         0.2.0
  */
 ?>
+<?php echo '<pre>'; var_dump($id); var_dump($leavetype); var_dump($leavetypes); echo '</pre>'; ?>
 <?php echo '<pre>'; print_r(array_keys(get_defined_vars())); echo '</pre>'; ?>
 <?php $attributes = array('id' => 'formEditLeaveType');
 echo form_open('leavetypes/edit/' . $id, $attributes); ?>
