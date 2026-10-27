@@ -7,7 +7,7 @@
  * @since         0.2.0
  */
 ?>
-
+<?php echo '<pre>'; print_r(array_keys(get_defined_vars())); echo '</pre>'; ?>
 <?php $attributes = array('id' => 'formEditLeaveType');
 echo form_open('leavetypes/edit/' . $id, $attributes); ?>
 <input type="hidden" name="id" value="<?php echo $id; ?>" />
