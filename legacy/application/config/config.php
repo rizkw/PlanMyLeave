@@ -537,7 +537,7 @@ $config['fonts'] =
 //____________________________________________________________________________
 // Hide/Disable features
 $config['disable_overtime'] = $env_bool('DISABLE_OVERTIME', false);            // TRUE to hide overtime menu entries
-$config['hide_global_cals_to_users'] = $env_bool('HIDE_GLOBAL_CALS_TO_USERS', false);   // TRUE to hide global calendars to users
+$config['hide_global_cals_to_users'] = $env_bool('HIDE_GLOBAL_CALS_TO_USERS', true);   // TRUE to hide global calendars to users
 $config['disable_department_calendar'] = $env_bool('DISABLE_DEPARTMENT_CALENDAR', false); // TRUE to disable 'department' menu entry
 $config['disable_workmates_calendar'] = $env_bool('DISABLE_WORKMATES_CALENDAR', false);  // TRUE to disable 'my workmates' menu entry
 
@@ -581,7 +581,7 @@ $config['saml_enabled'] = $env_bool('SAML_ENABLED', false);
 
 //____________________________________________________________________________
 //Enable public ICS feeds (global calendar, contract, personal information)
-$config['ics_enabled'] = $env_bool('ICS_ENABLED', true);
+$config['ics_enabled'] = $env_bool('ICS_ENABLED', false);
 $config['default_timezone'] = $env_str('DEFAULT_TIMEZONE', 'Asia/Beirut');
 $config['legacy_feeds'] = $env_bool('LEGACY_FEEDS', false); // TRUE to maintain the unsecure URLs for ICS feeds
 
