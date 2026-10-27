@@ -84,19 +84,19 @@ $db['default'] = array(
     'username' => getenv('MYSQL_USER') ?: 'pml',
     'password' => getenv('MYSQL_PASSWORD') ?: 'Zoya2020?',
     'database' => getenv('MYSQL_DATABASE') ?: 'pml',
-    'dbdriver' => 'pdo',
-    'subdriver' => 'mysql',
+    'dbdriver' => 'mysqli',        // FIXED: Changed to native mysqli driver for PHP 8 compatibility
     'dbprefix' => '',
     'pconnect' => FALSE,
     'db_debug' => (ENVIRONMENT !== 'production'),
     'cache_on' => FALSE,
     'cachedir' => '',
-    'char_set' => 'utf8',
-    'dbcollat' => 'utf8_general_ci',
+    'char_set' => 'utf8mb4',        // FIXED: Matched your database utf8mb4 schema
+    'dbcollat' => 'utf8mb4_unicode_ci', // FIXED: Matched your database collation schema
     'swap_pre' => '',
-    'encrypt' => FALSE,
+    'encrypt' => TRUE,             // FIXED: Enabled encryption for Azure MySQL requirements
     'compress' => FALSE,
     'stricton' => FALSE,
     'failover' => array(),
     'save_queries' => TRUE
 );
+
