@@ -536,7 +536,7 @@ $config['fonts'] =
 
 //____________________________________________________________________________
 // Hide/Disable features
-$config['disable_overtime'] = $env_bool('DISABLE_OVERTIME', false);            // TRUE to hide overtime menu entries
+$config['disable_overtime'] = $env_bool('DISABLE_OVERTIME', true);            // TRUE to hide overtime menu entries
 $config['hide_global_cals_to_users'] = $env_bool('HIDE_GLOBAL_CALS_TO_USERS', true);   // TRUE to hide global calendars to users
 $config['disable_department_calendar'] = $env_bool('DISABLE_DEPARTMENT_CALENDAR', false); // TRUE to disable 'department' menu entry
 $config['disable_workmates_calendar'] = $env_bool('DISABLE_WORKMATES_CALENDAR', false);  // TRUE to disable 'my workmates' menu entry
