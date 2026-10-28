@@ -41,11 +41,13 @@ $this->lang->load('menu', $language); ?>
     <div class="navbar-inner">
       <a href="<?php echo base_url(); ?>home" class="brand">&nbsp;<img
           src="<?php echo base_url(); ?>assets/images/brand.png" height="18" width="18"
-          style="margin-top:-6px;">&nbsp;Jorani</a>
+          style="margin-top:-6px;">&nbsp;Plan My Leave</a>
       <div class="nav-responsive">
         <ul class="nav">
-          <li><a href="<?php echo base_url(); ?>leaves" title="<?php echo lang('menu_leaves_list_requests'); ?>"><i
+        <!--
+<li><a href="<?php echo base_url(); ?>leaves" title="<?php echo lang('menu_leaves_list_requests'); ?>"><i
                 class="mdi mdi-format-list-bulleted"></i></a></li>
+-->
 
           <?php if (($is_hr == TRUE) || ($is_admin == TRUE)) { ?>
             <li class="dropdown">
