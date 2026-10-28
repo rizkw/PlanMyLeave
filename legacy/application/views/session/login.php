@@ -469,7 +469,6 @@
 
                 <div class="pml-form-heading">
                     <h2><?php echo lang('session_login_title'); ?></h2>
-                    <?php echo $help; ?>
                 </div>
                 <p class="pml-form-intro">Enter your account details to continue.</p>
 
