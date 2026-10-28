@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta charset="utf-8">
-    <title><?php echo $title ?> - Jorani</title>
+    <title><?php echo $title ?> - PML</title>
     <?php echo debugbar_head(); ?>
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <![endif]-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/dist/legacy.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/images/favicon.ico?v=3" sizes="32x32">
     <style>
         <?php //Font mapping with languages needing a better font than the default font
         $fonts = $this->config->item('fonts');
