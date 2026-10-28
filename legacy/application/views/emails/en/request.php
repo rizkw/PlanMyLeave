@@ -109,13 +109,13 @@
             <tr>
               <td align="center" class="button-cell">
                 <!--[if mso]>
-                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://planmyleave.azurewebsites.net/requests/" style="height:48px;v-text-anchor:middle;width:260px;" arcsize="17%" stroke="f" fillcolor="#2563eb">
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://pml-bhfce9avguaqa9fp.uaenorth-01.azurewebsites.net/requests/" style="height:48px;v-text-anchor:middle;width:260px;" arcsize="17%" stroke="f" fillcolor="#2563eb">
                   <w:anchorlock/>
                   <center style="color:#ffffff;font-family:Segoe UI,Arial,sans-serif;font-size:15px;font-weight:bold;">Review request</center>
                 </v:roundrect>
                 <![endif]-->
                 <!--[if !mso]><!-- -->
-                <a class="button-link" href="https://planmyleave.azurewebsites.net/requests/" style="background-color:#2563eb; border-radius:8px; color:#ffffff; display:inline-block; font-family:'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:600; line-height:48px; text-align:center; text-decoration:none; width:260px; -webkit-text-size-adjust:none;">Review request</a>
+                <a class="button-link" href="https://pml-bhfce9avguaqa9fp.uaenorth-01.azurewebsites.net/requests/" style="background-color:#2563eb; border-radius:8px; color:#ffffff; display:inline-block; font-family:'Segoe UI',Arial,sans-serif; font-size:15px; font-weight:600; line-height:48px; text-align:center; text-decoration:none; width:260px; -webkit-text-size-adjust:none;">Review request</a>
                 <!--<![endif]-->
               </td>
             </tr>
@@ -131,7 +131,7 @@
       <tr>
         <td class="mobile-pad" bgcolor="#ffffff" style="background-color:#ffffff; padding:20px 40px 34px 40px; border-radius:0 0 18px 18px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr><td style="border-top:1px solid #e5e7eb; font-size:0; line-height:0; height:20px;">&nbsp;</td></tr>
+            
             <tr>
               <td align="center" style="font-family:'Segoe UI',Arial,sans-serif; font-size:12px; line-height:18px; color:#9ca3af;">
                 This is an automatically generated message. Please do not reply to this email.
@@ -143,7 +143,7 @@
 
       <tr>
         <td class="footer-pad" align="center" style="padding:22px 40px 28px 40px;">
-          <img src="https://pml-bhfce9avguaqa9fp.uaenorth-01.azurewebsites.net/assets/images/vml_logo.png" alt="VML" style="width:85px; margin:0 auto;">
+          <img src="https://pml-bhfce9avguaqa9fp.uaenorth-01.azurewebsites.net/assets/images/vml_logo.png" width="85" height="20" alt="VML" style="display:block; width:85px; height:20px; margin:0 auto;">
         </td>
       </tr>
     </table>
