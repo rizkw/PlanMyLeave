@@ -239,6 +239,7 @@
 
     .pml-form-inner input[type="text"],
     .pml-form-inner input[type="password"],
+    .pml-form-inner input[type="email"],
     .pml-form-inner select,
     .pml-form-inner .select2-container {
         width: 100% !important;
@@ -246,6 +247,7 @@
     }
 
     .pml-form-inner input[type="text"],
+    .pml-form-inner input[type="email"],
     .pml-form-inner input[type="password"],
     .pml-form-inner select {
         height: 48px;
@@ -265,6 +267,7 @@
 
     .pml-form-inner input[type="text"]:focus,
     .pml-form-inner input[type="password"]:focus,
+    .pml-form-inner input[type="email"]:focus,
     .pml-form-inner select:focus {
         border-color: #2563eb;
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
@@ -565,11 +568,16 @@
 
         $('#login').focus();
 
-        $('#password').on('keydown', function (e) {
-            if (e.keyCode === 13) {
-                e.preventDefault();
-                $('#loginFrom').submit();
-            }
-        });
+       $('#loginFrom').on('keydown', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+
+        if (this.requestSubmit) {
+            this.requestSubmit();
+        } else {
+            this.submit();
+        }
+    }
+});
     });
 </script>
