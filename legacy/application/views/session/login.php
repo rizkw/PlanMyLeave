@@ -446,6 +446,29 @@
             font-size: 26px;
         }
     }
+
+    .login-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: login-spin 0.7s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes login-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 </style>
 
 <div class="pml-login-page">
@@ -579,5 +602,21 @@
         }
     }
 });
+
+        $('#loginFrom').on('submit', function () {
+    const $button = $(this).find('button[type="submit"]');
+
+    // Prevent repeated submissions
+    if ($button.prop('disabled')) {
+        return false;
+    }
+
+    $button.prop('disabled', true);
+    $button.html(`
+        <span class="login-spinner"></span>
+        Logging in...
+    `);
+});
+        
     });
 </script>
