@@ -497,9 +497,9 @@
                 <?php } ?>
 
                 <label for="login"><?php echo lang('session_login_field_login'); ?></label>
-                <input type="text" name="login" id="login"
+                <input type="email" name="login" id="login"
                     value="<?php echo (ENVIRONMENT == 'demo') ? 'bbalet' : set_value('login'); ?>"
-                    autocomplete="username" required>
+                    autocomplete="email" required autocapitalize="none" spellcheck="false" oninput="this.value = this.value.toLowerCase()">
 
                 <label for="password"><?php echo lang('session_login_field_password'); ?></label>
                 <input type="password" name="password" id="password"
