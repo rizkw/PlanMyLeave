@@ -523,9 +523,10 @@ button[type="submit"]:disabled {
                 <?php } ?>
 
                 <label for="login"><?php echo lang('session_login_field_login'); ?></label>
-                <input type="email" name="login" id="login"
-                    value="<?php echo (ENVIRONMENT == 'demo') ? 'bbalet' : set_value('login'); ?>"
-                    autocomplete="email" required autocapitalize="none" spellcheck="false" oninput="this.value = this.value.toLowerCase()">
+                <input type="text" inputmode="email" name="login" id="login"
+    value="<?php echo (ENVIRONMENT == 'demo') ? 'bbalet' : set_value('login'); ?>"
+    autocomplete="username" required autocapitalize="none" spellcheck="false"
+    oninput="this.value = this.value.toLowerCase()">
 
                 <label for="password"><?php echo lang('session_login_field_password'); ?></label>
                 <input type="password" name="password" id="password"
@@ -592,30 +593,23 @@ button[type="submit"]:disabled {
         $('#login').focus();
 
        $('#loginFrom').on('keydown', function (e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-
-        if (this.requestSubmit) {
-            this.requestSubmit();
-        } else {
-            this.submit();
-        }
+    if (e.key === 'Enter' && $(this).find('button[type="submit"]').prop('disabled')) {
+        e.preventDefault(); // already submitting, ignore extra Enter presses
     }
 });
 
-        $('#loginFrom').on('submit', function () {
+$('#loginFrom').on('submit', function () {
     const $button = $(this).find('button[type="submit"]');
 
-    // Prevent repeated submissions
     if ($button.prop('disabled')) {
         return false;
     }
 
-    $button.prop('disabled', true);
-    $button.html(`
-        <span class="login-spinner"></span>
-        Logging in...
-    `);
+    setTimeout(function () {
+        $button.prop('disabled', true).html(
+            '<span class="login-spinner"></span> Logging in...'
+        );
+    }, 50);
 });
         
     });
