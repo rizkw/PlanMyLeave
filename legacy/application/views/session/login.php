@@ -533,11 +533,23 @@ button[type="submit"]:disabled {
                     autocomplete="current-password"
                     value="<?php echo (ENVIRONMENT == 'demo') ? 'bbalet' : ''; ?>" required>
 
-                <button type="submit" class="pml-login-button">
-                    <i class="mdi mdi-login" aria-hidden="true"></i>
-                    <span><?php echo lang('session_login_button_login'); ?></span>
-                </button>
-                </form>
+               
+<button type="submit" class="pml-login-button">
+    <i class="mdi mdi-login" aria-hidden="true"></i>
+    <span><?php echo lang('session_login_button_login'); ?></span>
+</button>
+</form>
+
+<?php if (($this->config->item('ldap_enabled') == FALSE) && (ENVIRONMENT != 'demo')) { ?>
+    <div style="text-align:center; margin-top:18px;">
+        <button type="button" id="cmdForgetPassword"
+            style="border:0; background:none; color:#2563eb; font-size:14px; font-weight:600; cursor:pointer; padding:8px;">
+            <i class="mdi mdi-lock-reset"></i>
+            <?php echo lang('session_login_button_forget_password'); ?>
+        </button>
+    </div>
+<?php } ?>
+
 
                 <div class="pml-form-footer">
                     <img src="<?php echo base_url(); ?>assets/images/vml_logo.png" alt="VML">
@@ -591,6 +603,50 @@ button[type="submit"]:disabled {
         }
 
         $('#login').focus();
+
+        
+// Forgot Password
+$('#cmdForgetPassword').click(function () {
+    if ($('#login').val() == "") {
+        bootbox.alert("<?php echo lang('session_login_msg_empty_login'); ?>");
+    } else {
+        bootbox.confirm(
+            "<?php echo lang('session_login_msg_forget_password'); ?>",
+            "<?php echo lang('Cancel'); ?>",
+            "<?php echo lang('OK'); ?>",
+            function (result) {
+                if (result) {
+                    $('#frmModalAjaxWait').modal('show');
+
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo base_url(); ?>session/forgetpassword",
+                        data: {
+                            login: $('#login').val()
+                        }
+                    })
+                    .done(function (msg) {
+                        $('#frmModalAjaxWait').modal('hide');
+
+                        switch (msg) {
+                            case "OK":
+                                bootbox.alert("<?php echo lang('session_login_msg_password_sent'); ?>");
+                                break;
+
+                            case "UNKNOWN":
+                                bootbox.alert("<?php echo lang('session_login_flash_bad_credentials'); ?>");
+                                break;
+                        }
+                    })
+                    .fail(function () {
+                        $('#frmModalAjaxWait').modal('hide');
+                        bootbox.alert("Unable to process your request. Please try again.");
+                    });
+                }
+            }
+        );
+    }
+});
 
        $('#loginFrom').on('keydown', function (e) {
     if (e.key === 'Enter' && $(this).find('button[type="submit"]').prop('disabled')) {
