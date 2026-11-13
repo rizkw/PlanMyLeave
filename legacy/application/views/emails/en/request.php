@@ -75,6 +75,10 @@
       <tr>
         <td class="mobile-pad" bgcolor="#ffffff" style="background-color:#ffffff; padding:0 40px 8px 40px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e5e7eb; border-radius:12px; overflow:hidden;">
+           <tr>
+  <td class="detail-label" valign="top" bgcolor="#f9fafb" style="padding:14px 16px; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; line-height:20px; font-weight:600; color:#6b7280;">Leave Type</td>
+  <td valign="top" style="padding:14px 16px; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI',Arial,sans-serif; font-size:14px; line-height:20px; color:#111827;">{Type}</td>
+</tr>
             <tr>
               <td class="detail-label" valign="top" bgcolor="#f9fafb" style="padding:14px 16px; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; line-height:20px; font-weight:600; color:#6b7280;">From</td>
               <td valign="top" style="padding:14px 16px; border-bottom:1px solid #e5e7eb; font-family:'Segoe UI',Arial,sans-serif; font-size:14px; line-height:20px; color:#111827;">{StartDate}</td>
